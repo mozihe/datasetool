@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "datasetool"
+version = "0.1.0"
+description = "A tiny yet robust dataset split tool for YOLO-style datasets"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "mozihe", email = "zhujunheng2005@gmail.com" }]
+keywords = ["dataset", "yolo", "split", "computer-vision", "ml"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Environment :: Console"
+]
+dependencies = []
+
+[project.optional-dependencies]
+progress = ["tqdm>=4.66"]
+
+[project.urls]
+Homepage = "https://github.com/mozihe/datasetool"
+Issues = "https://github.com/mozihe/datasetool/issues"
+
+[project.scripts]
+dtsplit = "datasetool.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["datasetool*"]
